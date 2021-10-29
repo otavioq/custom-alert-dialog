@@ -1,0 +1,3 @@
+ -keep class com.otavioq.CustomAlert.Rotate3dAnimation {
+    public <init>(...);
+ }
