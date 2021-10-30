@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
-version = VERSION_NAME
-group = GROUP
+version = '7.0.2'
+group = com.github.otavioq
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
