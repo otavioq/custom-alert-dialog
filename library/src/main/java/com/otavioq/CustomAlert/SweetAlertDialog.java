@@ -27,8 +27,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.pnikosis.materialishprogress.ProgressWheel;
-
 import java.util.List;
 
 public class SweetAlertDialog extends Dialog implements View.OnClickListener {
@@ -64,7 +62,7 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     private ImageView mCustomImage;
     private LinearLayout mButtonsContainer;
     private Button mConfirmButton;
-    private boolean mHideConfirmButton = false;
+    private boolean mHideConfirmButton;
     private Button mCancelButton;
     private Button mNeutralButton;
     private Integer mConfirmButtonBackgroundColor;
@@ -418,6 +416,11 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     public SweetAlertDialog showConfirmButton(boolean isShow) {
         mShowConfirm = isShow;
         if (mConfirmButton != null) {
+            if(isShow == true){
+                this.mHideConfirmButton = false;
+            } else {
+                this.mHideConfirmButton = true;
+            }
             mConfirmButton.setVisibility(mShowConfirm ? View.VISIBLE : View.GONE);
         }
         return this;
@@ -455,8 +458,11 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     public SweetAlertDialog setConfirmText(String text) {
         mConfirmText = text;
         if (mConfirmButton != null && mConfirmText != null) {
+            this.mHideConfirmButton = false;
             showConfirmButton(true);
             mConfirmButton.setText(mConfirmText);
+        } else {
+            this.mHideConfirmButton = true;
         }
         return this;
     }

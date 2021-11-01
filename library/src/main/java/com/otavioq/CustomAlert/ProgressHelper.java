@@ -2,8 +2,6 @@ package com.otavioq.CustomAlert;
 
 import android.content.Context;
 
-import com.pnikosis.materialishprogress.ProgressWheel;
-
 public class ProgressHelper {
     private ProgressWheel mProgressWheel;
     private boolean mToSpin;
